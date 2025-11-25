@@ -40,13 +40,20 @@ jwt:
   expiresin: '1h'
   refreshExpiresIn: '2h'
 
+# github 配置
+github:
+  clientId: ''
+  clientSecret: ''
+
 # 接口白名单
 perm:
   router:
     whiteList:
       [
-        { path: '/api/captcha', method: 'GET' },
-        { path: '/api/login', method: 'POST' },
-        { path: '/api/registry', method: 'POST' },
-        { path: '/api/ossSign', method: 'GET' },
+        { path: '/api/auth/captcha', method: 'GET' },
+        { path: '/api/auth/login', method: 'POST' },
+        { path: '/api/auth/registry', method: 'POST' },
+        { path: '/api/upload/ossSign', method: 'GET' },
+        { path: '/api/auth/github', method: 'GET' },
+        { path: '/api/auth/github/callback', method: 'GET' },
       ]
