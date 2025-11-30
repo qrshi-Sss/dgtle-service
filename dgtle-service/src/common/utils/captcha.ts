@@ -1,4 +1,4 @@
-import * as svgCaptcha from 'svg-captcha';
+import * as svgCaptcha from 'svg-captcha'
 
 const options = {
   // 验证码字符集，可以是字母、数字或者组合
@@ -32,8 +32,8 @@ const options = {
   // 验证码噪点的半径
   pointRadius: 2,
   // 验证码噪点的位置，可以是 'random' 或 'top' 或 'left' 或 'right' 或 'bottom'
-  pointPosition: 'random',
-};
+  pointPosition: 'random'
+}
 
 /**
  * @description 创建数学表达式验证码
@@ -44,8 +44,8 @@ export function createMath() {
     ...options,
     mathMin: 1,
     mathMax: 50,
-    mathOperator: '+-',
-  });
+    mathOperator: '+-'
+  })
 }
 
 /**
@@ -53,5 +53,5 @@ export function createMath() {
  * @returns {Promise<ResultData>} 返回验证码图片
  * */
 export function createText() {
-  return svgCaptcha.create(options);
+  return svgCaptcha.create(options)
 }

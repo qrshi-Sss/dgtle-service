@@ -1,33 +1,33 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 
 @Entity('users')
 export class UserEntity {
   @PrimaryGeneratedColumn('increment', { type: 'bigint', comment: '用户ID' })
-  id: string; // bigint 用 string 表示，避免精度丢失
+  id: string // bigint 用 string 表示，避免精度丢失
 
   @Column({ type: 'varchar', length: 20, nullable: true, comment: 'githubID' })
-  githubId?: string;
+  githubId?: string
 
   @Column({ type: 'varchar', length: 20, comment: '用户昵称' })
-  username: string;
+  username: string
 
   @Column({ type: 'varchar', comment: '用户邮箱' })
-  email?: string;
+  email?: string
 
   @Column({
     type: 'varchar',
     length: 20,
     nullable: true,
-    comment: '用户手机号',
+    comment: '用户手机号'
   })
-  phone?: string;
+  phone?: string
 
   @Column({ type: 'varchar', length: 128, comment: '用户密码' })
-  password?: string;
+  password?: string
 
   @Column({ type: 'tinyint', comment: '用户账号等级' })
-  level: number;
+  level: number
 
   @Column({ type: 'int', comment: '用户账号等级经验' })
-  level_exp: number;
+  level_exp: number
 }

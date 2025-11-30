@@ -1,0 +1,42 @@
+// // 默认主题色
+// $default-vars: (
+//   primary: #409eff,
+//   success: #67c23a,
+//   warning: #e6a23c,
+//   danger: #f56c6c,
+//   info: #909399,
+//   border-radius-base: 4px
+// );
+
+// // 蓝色系
+// $blue-theme: map-merge(
+//   $default-vars,
+//   (
+//     primary: #2e72b1,
+//     success: #2bc667,
+//     border-radius-base: 6px
+//   )
+// );
+
+// // 绿色系
+// $green-theme: map-merge(
+//   $default-vars,
+//   (
+//     primary: #007d7b,
+//     success: #8bc34a,
+//     border-radius-base: 8px
+//   )
+// );
+
+// // 动态生成 CSS 变量
+// :root {
+//   @each $theme-name, $theme-map in (blue: $blue-theme, green: $green-theme) {
+//     &[data-theme='#{$theme-name}'] {
+//       @each $key, $value in $theme-map {
+//         --el-color-#{$key}: #{$value};
+//       }
+
+//       --el-border-radius-base: #{map-get($theme-map, border-radius-base)};
+//     }
+//   }
+// }

@@ -1,18 +1,18 @@
-import { Get, UseGuards, Request, Response, Inject } from '@nestjs/common';
-import { GithubAuthGuard } from '@/common/guards/github-auth.guard';
+import { Get, UseGuards, Request, Response, Inject } from '@nestjs/common'
+import { GithubAuthGuard } from '@/common/guards/github-auth.guard'
 
-import { ResultData } from 'src/common/utils/result';
-import { ConfigService } from '@nestjs/config';
-import { Controller } from '@nestjs/common';
-import { AuthService } from './auth.service';
-import { Body, Post } from '@nestjs/common';
-import { RegistryUserDto, LoginUserDto } from './dto/index';
+import { ResultData } from 'src/common/utils/result'
+import { ConfigService } from '@nestjs/config'
+import { Controller } from '@nestjs/common'
+import { AuthService } from './auth.service'
+import { Body, Post } from '@nestjs/common'
+import { RegistryUserDto, LoginUserDto } from './dto/index'
 
 @Controller('auth')
 export class AuthController {
   constructor(
     private readonly authService: AuthService,
-    @Inject(ConfigService) private readonly config: ConfigService,
+    @Inject(ConfigService) private readonly config: ConfigService
   ) {}
   /**
    * @description 获取验证码
@@ -20,7 +20,7 @@ export class AuthController {
    * */
   @Get('/captcha')
   getCaptchaImage() {
-    return this.authService.getCaptchaImage();
+    return this.authService.getCaptchaImage()
   }
 
   /**
@@ -29,7 +29,7 @@ export class AuthController {
    * */
   @Post('/registry')
   registry(@Body() registryUserDto: RegistryUserDto) {
-    return this.authService.registry(registryUserDto);
+    return this.authService.registry(registryUserDto)
   }
 
   /**
@@ -38,7 +38,7 @@ export class AuthController {
    * */
   @Post('/login')
   login(@Body() loginUserDto: LoginUserDto) {
-    return this.authService.login(loginUserDto);
+    return this.authService.login(loginUserDto)
   }
 
   /**
@@ -55,7 +55,7 @@ export class AuthController {
   @UseGuards(GithubAuthGuard)
   @Get('/github/callback')
   async githubAuthCallback(@Request() req) {
-    const user = req.user;
-    return this.authService.githubLogin(user);
+    const user = req.user
+    return this.authService.githubLogin(user)
   }
 }

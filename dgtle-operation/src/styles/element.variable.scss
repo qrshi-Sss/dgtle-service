@@ -1,0 +1,25 @@
+// element默认变量设置
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'white': #ffffff,
+    'black': #000000,
+    'primary': (
+      'base': #007d7b
+    ),
+    'success': (
+      'base': #8bc34a
+    ),
+    'warning': (
+      'base': #ffc107
+    ),
+    'danger': (
+      'base': #f56c6c
+    ),
+    'error': (
+      'base': #ff5722
+    ),
+    'info': (
+      'base': #909399
+    )
+  )
+);

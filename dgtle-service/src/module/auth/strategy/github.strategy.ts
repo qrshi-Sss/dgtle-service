@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common';
-import { PassportStrategy } from '@nestjs/passport';
-import { Strategy } from 'passport-github2';
-import { ConfigService } from '@nestjs/config';
+import { Injectable } from '@nestjs/common'
+import { PassportStrategy } from '@nestjs/passport'
+import { Strategy } from 'passport-github2'
+import { ConfigService } from '@nestjs/config'
 
 @Injectable()
 export class GithubStrategy extends PassportStrategy(Strategy, 'github') {
@@ -9,8 +9,8 @@ export class GithubStrategy extends PassportStrategy(Strategy, 'github') {
     super({
       clientID: config.get('github.clientId') as string,
       clientSecret: config.get('github.clientSecret') as string,
-      callbackURL: config.get('github.callbackURL') as string,
-    });
+      callbackURL: config.get('github.callbackURL') as string
+    })
   }
 
   // 实现父类抽象方法validate
@@ -22,7 +22,7 @@ export class GithubStrategy extends PassportStrategy(Strategy, 'github') {
       githubId: profile.id,
       username: profile.username,
       email: profile._json.email || '',
-      accessToken,
-    };
+      accessToken
+    }
   }
 }

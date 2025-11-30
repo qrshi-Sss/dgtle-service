@@ -1,5 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
-import { UploadService } from './upload.service';
+import { Controller, Get } from '@nestjs/common'
+import { UploadService } from './upload.service'
 
 @Controller('upload')
 export class UploadController {
@@ -11,6 +11,6 @@ export class UploadController {
    * */
   @Get('/ossSign')
   async getOssSign() {
-    return await this.uploadService.getOssSign();
+    return await this.uploadService.getOssSign()
   }
 }

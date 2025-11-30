@@ -11,5 +11,5 @@ export enum CacheEnum {
   /**
    * @description 验证码 redis key
    */
-  CAPTCHA_CODE_KEY = 'captcha_codes:',
+  CAPTCHA_CODE_KEY = 'captcha_codes:'
 }
